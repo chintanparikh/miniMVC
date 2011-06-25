@@ -1,0 +1,35 @@
+miniMVC
+An absolute bare-bones basic MVC framework/boilerplate for tiny PHP projects
+
+--------------------------------------------------------------------------------
+miniMVC is intended to be used for extremely small PHP projects, where you want
+to seperate the code from the user interface.
+
+miniMVC does NOT provide any existing classes, and only provides a dummy 
+controller, model and view. However, it does provide the basis of loading
+these into your project.
+
+--------------------------------------------------------------------------------
+Mini-Documentation for miniMVC
+
+-All controllers go in Application/Controllers, and are loaded 
+	via Application::loadController('controllerName'). However, if you need to use more 
+	than one controller, this framework is probably too small for your needs.
+	The controller's filename MUST be the same as the name of the class 
+	contained inside the controller. For example, a controller named blog.php
+	would contain inside it class Blog. Furthermore, all controllers must extend
+	the class Application
+
+-All models go in Application/Models, and are loaded via
+	Application::loadModel('modelName'). They are then accessible through
+	Application::model['modelName']. Again, the model's filename must be
+	the same as the name of the class it defines. For example, a model named
+	comments.php must contain within it class Comments.
+
+-All views go in Application/Views, and are loaded via
+	Application::loadView('viewName', $array). The $array is optional, and if 
+	passed, is extracted, and the resulting variables are usable in the view.
+
+--------------------------------------------------------------------------------
+License: Creative Commons
+	
